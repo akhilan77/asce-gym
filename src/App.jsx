@@ -12,39 +12,35 @@ import Trainers from './pages/Trainer.jsx';
 import Pricing from './pages/Pricing.jsx';
 import Blog from './pages/Blog.jsx';
 import Contact from './pages/Contact.jsx';
-
-
 import Login from './pages/Login';
 import Register from './pages/Register';
+
 function App() {
   return (
     <Router>
-      <div className="container-fluid p-0">
-        <div className="row g-0">
-          <div className="col-12">
-            <Header/>
-            <Navbar />
-            <main className="min-vh-100 p-3 p-md-4">
-              <div className="container-fluid">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/schedule" element={<Schedule />} />
-                  <Route path="/trainers" element={<Trainers />} />
-                  <Route path="/pricing" element={<Pricing />} />
-                  <Route path="/blog" element={<Blog />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/register" element={<Register />} />
-                </Routes>
-              </div>
-            </main>
-            <Footer />
-          </div>
-        </div>
+      <div className="d-flex flex-column min-vh-100 w-100">
+        <Header/>
+        <Navbar />
+        <main className="flex-grow-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/schedule" element={<Schedule />} />
+            <Route path="/trainers" element={<Trainers />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
     </Router>
   );
 }
 
 export default App;
+
+
+
 
