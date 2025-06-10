@@ -23,6 +23,17 @@ function Trainer() {
       })
       .catch((error) => {
         console.error('Error fetching trainers:', error);
+        // Handle API errors
+        if (error.response) {
+          // Server responded with error status
+          if (error.response.status === 401) {
+            // Unauthorized - redirect to login
+            window.location.href = '/login';
+          } else if (error.response.status === 403) {
+            // Forbidden - user needs to register
+            window.location.href = '/register';
+          }
+        }
       });
   }, []);
 
