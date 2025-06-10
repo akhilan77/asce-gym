@@ -33,19 +33,37 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-          
+            {/* Handle 404 Page Not Found */}
+            <Route path="*" element={
+              <div className="container text-center py-5">
+                <div className="row justify-content-center">
+                  <div className="col-md-6">
+                    <h1 className="display-1 fw-bold text-danger mb-4">404</h1>
+                    <h2 className="display-6 mb-3">Oops! Page Not Found</h2>
+                    <div className="mb-4">
+                      <img 
+                        src="https://cdn-icons-png.flaticon.com/512/6195/6195678.png" 
+                        alt="404 Error" 
+                        className="img-fluid" 
+                        style={{ maxWidth: '200px' }}
+                      />
+                    </div>
+                    <p className="lead text-muted mb-4">
+                      Looks like you've ventured into uncharted territory! 
+                      The page you're looking for might have been moved or doesn't exist.
+                    </p>
+                    <Link to="/" className="btn btn-primary btn-lg px-4">
+                      <i className="bi bi-house-door me-2"></i>
+                      Return to Homepage
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            } />
           </Routes>
         </main>
         <Footer />
-        {/* Handle 404 Page Not Found */}
-          {/* <Route path="*" element={
-            <div className="container text-center py-5">
-              <h1>404</h1>
-              <h2>Page Not Found</h2>
-              <p>The page you are looking for doesn't exist or has been moved.</p>
-              <Link to="/" className="btn btn-primary">Go Back Home</Link>
-            </div>
-          } /> */}
+
       </div>
     </Router>
   );
