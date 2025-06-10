@@ -7,14 +7,14 @@ const trainers = [
     name: "Rahul Mehra",
     specialization: "Strength Training",
     experience: "5 years",
-    image: "https://via.placeholder.com/150",
+    image: "https://placehold.co/600x400",
   },
   {
     id: 2,
     name: "Priya Sharma",
     specialization: "Zumba & Dance Fitness",
     experience: "4 years",
-    image: "https://via.placeholder.com/150",
+    image: "https://hips.hearstapps.com/hmg-prod/images/mh-trainer-2-1533576998.png",
   },
   {
     id: 3,
