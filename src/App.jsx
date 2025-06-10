@@ -34,6 +34,17 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        {/* Handle 404 Page Not Found */}
+        <Routes>
+          <Route path="*" element={
+            <div className="container text-center py-5">
+              <h1>404</h1>
+              <h2>Page Not Found</h2>
+              <p>The page you are looking for doesn't exist or has been moved.</p>
+              <Link to="/" className="btn btn-primary">Go Back Home</Link>
+            </div>
+          } />
+        </Routes>
       </div>
     </Router>
   );
