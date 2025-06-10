@@ -20,7 +20,7 @@ import Register from './pages/Register';
 function App() {
   return (
     <Router>
-      <div className="d-flex flex-column min-vh-100 w-100">
+      <div className="d-flex flex-column min-vh-100 w-100 vw-100 m-0 p-0">
         <Header/>
         {/* <Navbar /> */}
         <main className="flex-grow-1">
@@ -33,6 +33,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+          
           </Routes>
         </main>
         <Footer />
