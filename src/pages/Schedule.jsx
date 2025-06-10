@@ -51,7 +51,11 @@ function Schedule() {
   return (
     <div className="container my-5">
       <h2 className="text-center mb-4">Weekly Class Schedule</h2>
-      <div className="accordion" id="scheduleAccordion">
+      <h3>ASCE Gym operates from 10:00 AM to 10:00 PM, Monday to Friday. Ensure that these timings are reflected accurately
+on the website.
+</h3>
+<hr/>
+      <div className="accordion mt-4" id="scheduleAccordion">
         {schedule.map((daySchedule, index) => (
           <div className="accordion-item" key={index}>
             <h2 className="accordion-header" id={`heading${index}`}>
