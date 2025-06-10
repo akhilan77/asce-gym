@@ -16,6 +16,40 @@ function Home() {
                 <Link to="/register" className="btn btn-primary btn-lg">Join Now</Link>
                 <Link to="/contact" className="btn btn-outline-light btn-lg">Learn More</Link>
               </div>
+              <div className="mt-4 d-flex gap-3">
+                <div className="animated-badge bg-success text-white p-3 rounded-circle pulse-animation">
+                  <i className="bi bi-star-fill fs-4"></i>
+                </div>
+                <div className="animated-badge bg-warning text-white p-3 rounded-circle bounce-animation">
+                  <i className="bi bi-lightning-fill fs-4"></i>
+                </div>
+                <div className="animated-badge bg-info text-white p-3 rounded-circle shake-animation">
+                  <i className="bi bi-heart-fill fs-4"></i>
+                </div>
+              </div>
+              <style>
+                {`
+                  @keyframes pulse {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(1.1); }
+                    100% { transform: scale(1); }
+                  }
+                  @keyframes bounce {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-10px); }
+                  }
+                  @keyframes shake {
+                    0%, 100% { transform: rotate(0); }
+                    25% { transform: rotate(5deg); }
+                    75% { transform: rotate(-5deg); }
+                  }
+                  .pulse-animation { animation: pulse 2s infinite; }
+                  .bounce-animation { animation: bounce 2s infinite; }
+                  .shake-animation { animation: shake 2s infinite; }
+                  .animated-badge { transition: all 0.3s ease; }
+                  .animated-badge:hover { transform: scale(1.2); }
+                `}
+              </style>
             </div>
           </div>
         </div>
