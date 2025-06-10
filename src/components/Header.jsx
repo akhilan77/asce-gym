@@ -34,6 +34,9 @@ function Header() {
               <NavLink to="/pricing" className="nav-link">Pricing</NavLink>
             </li>
             <li className="nav-item">
+              <NavLink to="/about" className="nav-link">About</NavLink>
+            </li>
+            <li className="nav-item">
               <NavLink to="/blog" className="nav-link">Blog</NavLink>
             </li>
             <li className="nav-item">

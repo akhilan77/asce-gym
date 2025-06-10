@@ -9,6 +9,7 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 
 import Home from './pages/Home.jsx';
+import About from './pages/About.jsx';
 import Schedule from './pages/Schedule.jsx';
 import Trainers from './pages/Trainer.jsx';
 import Pricing from './pages/Pricing.jsx';
@@ -29,6 +30,7 @@ function App() {
             <Route path="/schedule" element={<Schedule />} />
             <Route path="/trainers" element={<Trainers />} />
             <Route path="/pricing" element={<Pricing />} />
+            <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
