@@ -20,7 +20,7 @@ function App() {
     <Router>
       <div className="d-flex flex-column min-vh-100 w-100">
         <Header/>
-        <Navbar />
+        {/* <Navbar /> */}
         <main className="flex-grow-1">
           <Routes>
             <Route path="/" element={<Home />} />
