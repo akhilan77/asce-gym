@@ -51,10 +51,8 @@ function Schedule() {
   return (
     <div className="container my-5">
       <h2 className="text-center mb-4">Weekly Class Schedule</h2>
-      <h3>ASCE Gym is open 10 AM to 10 PM, Mon to Fri. </h3>
-      <h3>ASCE Gym operates from 10:00 AM to 10:00 PM, Monday to Friday. Ensure that these timings are reflected accurately
-on the website.
-</h3>
+      <h5 className="text-center mb-4">ASCE Gym is open 10 AM to 10 PM, Mon to Fri. </h5>
+      
 <hr/>
       <div className="accordion mt-4" id="scheduleAccordion">
         {schedule.map((daySchedule, index) => (
