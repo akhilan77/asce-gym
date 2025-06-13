@@ -1,26 +1,12 @@
 // src/pages/Login.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Login() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
-
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/login`, formData);
-      if (response.data) {
-        // Handle successful login
-        console.log('Login successful');
-      }
-    } catch (error) {
-      console.error('Login failed:', error);
-    }
-  };
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -29,10 +15,29 @@ function Login() {
     });
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/login`, formData);
+      const { token, name } = response.data;
+
+      localStorage.setItem('token', token);
+      localStorage.setItem('userName', name); // Save name to localStorage
+
+      navigate('/');
+    } catch {
+      setError('Invalid credentials. Redirecting to Register...');
+      setTimeout(() => {
+        navigate('/register');
+      }, 2000);
+    }
+  };
+
   return (
     <div className="container mt-5" style={{ maxWidth: '500px' }}>
       <h2 className="mb-4 text-center">Login</h2>
       <form onSubmit={handleSubmit}>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
         <div className="mb-3">
           <label>Email address</label>
           <input
@@ -42,6 +47,7 @@ function Login() {
             placeholder="Enter email"
             value={formData.email}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="mb-3">
@@ -53,6 +59,7 @@ function Login() {
             placeholder="Enter password"
             value={formData.password}
             onChange={handleChange}
+            required
           />
         </div>
         <button type="submit" className="btn btn-primary w-100">Login</button>
